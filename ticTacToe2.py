@@ -1,3 +1,7 @@
+# Assignment: Week 1 - Tic-Tac-Toe
+# CSE 210 - Programming with Classes
+# Author: Chris Mills
+
 from numpy import square
 import os
 
@@ -40,8 +44,8 @@ def checkScore(board):
 def main():
     board = [1,2,3,4,5,6,7,8,9]
     currentPlayer = "X"
+    showBoard(board)
     while not checkScore(board):
-        showBoard(board)
         if checkScore(board) == 'draw':
             break
 
@@ -61,7 +65,7 @@ def main():
 
         board[square] = currentPlayer
         currentPlayer = "X" if currentPlayer == "O" else "O"
-
+        showBoard(board)
     if checkScore(board) == "draw":
         print("Sorry! Nobody wins!")
     else:
